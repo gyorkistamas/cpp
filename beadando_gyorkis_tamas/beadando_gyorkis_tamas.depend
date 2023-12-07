@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1701976407 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
+	<iostream>
+	"worker.hpp"
+	"date.hpp"
+	"employee.hpp"
+
+1701977013 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
+	<string>
+	"date.hpp"
+	<iostream>
+
+1701975093 d:\projects\cpp\beadando_gyorkis_tamas\date.hpp
+	<iostream>
+
+1701974339 source:d:\projects\cpp\beadando_gyorkis_tamas\date.cpp
+	"date.hpp"
+	<iostream>
+
+1701977125 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
+	<string>
+	"worker.hpp"
+	<iostream>
+
+1701977097 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
+	"employee.hpp"
+	<iostream>
+	"date.hpp"
+	"worker.hpp"
+	<string>
+
+1701976612 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
+	"worker.hpp"
+	<iostream>
+	<string>
+

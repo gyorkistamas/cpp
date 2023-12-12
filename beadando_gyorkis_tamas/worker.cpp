@@ -10,3 +10,8 @@ ostream& operator<<(ostream &s, Worker& w)
     s << w.name() << ", " << d;
     return s;
 }
+
+int Worker::getWageAndContribution()
+{
+    return getWageForMonth() + getContribution();
+}

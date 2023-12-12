@@ -1,11 +1,12 @@
 # depslib dependency file v1.0
-1701976407 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
+1702381687 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
 	<iostream>
 	"worker.hpp"
 	"date.hpp"
 	"employee.hpp"
+	"contractor.hpp"
 
-1701977013 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
+1702381229 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
 	<string>
 	"date.hpp"
 	<iostream>
@@ -17,20 +18,25 @@
 	"date.hpp"
 	<iostream>
 
-1701977125 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
+1702381299 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
-1701977097 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
+1702381504 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
 	"employee.hpp"
 	<iostream>
 	"date.hpp"
 	"worker.hpp"
 	<string>
 
-1701976612 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
+1702381292 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
 	"worker.hpp"
 	<iostream>
 	<string>
+
+1702382013 d:\projects\cpp\beadando_gyorkis_tamas\contractor.hpp
+	<string>
+	"worker.hpp"
+	<iostream>
 

@@ -19,6 +19,9 @@ public:
     void setBirthDate(int birthYear, int birthMonth, int birthDay) {birthDate_m = Date(birthYear, birthMonth, birthDay);}
 
     virtual int getWageForMonth() = 0;
+    virtual int getContribution() = 0;
+
+    int getWageAndContribution();
     virtual ~Worker() {};
 private:
     string name_m;

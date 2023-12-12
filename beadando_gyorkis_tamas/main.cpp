@@ -3,17 +3,20 @@
 #include "date.hpp"
 #include "employee.hpp"
 #include "contractor.hpp"
+#include "leader.hpp"
 using namespace std;
-
-const float employee_cont = 1;
-const float contractor_cont = 0.3;
-const float leader_cont = 1;
 
 int main()
 {
-    Employee e("Nev", 2001, 4, 30, 300, 300, 500);
+    Contractor c("Teszt", 2001, 4, 30, 10, 1500);
 
-    cout << contractor_cont;
+    cout << c << endl;
+
+    cout << c.getWageForMonth() << endl;
+
+    cout << c.getContribution() << endl;
+
+    cout << c.getWageAndContribution() << endl;
 
     return 0;
 }

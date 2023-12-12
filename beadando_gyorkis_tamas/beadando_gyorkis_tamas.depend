@@ -1,10 +1,11 @@
 # depslib dependency file v1.0
-1702381687 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
+1702388146 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
 	<iostream>
 	"worker.hpp"
 	"date.hpp"
 	"employee.hpp"
 	"contractor.hpp"
+	"leader.hpp"
 
 1702381229 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
 	<string>
@@ -42,8 +43,22 @@
 
 1702383022 source:d:\projects\cpp\beadando_gyorkis_tamas\constants.cpp
 
-1702382842 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
+1702388252 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
 	"contractor.hpp"
 	<string>
 	<iostream>
+	"constants.hpp"
+	<cmath>
+
+1702387590 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
+	"leader.hpp"
+	<string>
+	<iostream>
+
+1702387348 d:\projects\cpp\beadando_gyorkis_tamas\leader.hpp
+	<string>
+	"worker.hpp"
+	<iostream>
+
+1702387899 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
 

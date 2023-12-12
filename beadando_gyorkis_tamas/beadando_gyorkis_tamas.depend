@@ -40,3 +40,10 @@
 	"worker.hpp"
 	<iostream>
 
+1702383022 source:d:\projects\cpp\beadando_gyorkis_tamas\constants.cpp
+
+1702382842 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
+	"contractor.hpp"
+	<string>
+	<iostream>
+

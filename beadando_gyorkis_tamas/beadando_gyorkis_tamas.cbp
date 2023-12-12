@@ -32,10 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="contractor.cpp" />
+		<Unit filename="contractor.hpp" />
 		<Unit filename="date.cpp" />
 		<Unit filename="date.hpp" />
 		<Unit filename="employee.cpp" />
 		<Unit filename="employee.hpp" />
+		<Unit filename="leader.cpp" />
+		<Unit filename="leader.hpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="worker.cpp" />
 		<Unit filename="worker.hpp" />

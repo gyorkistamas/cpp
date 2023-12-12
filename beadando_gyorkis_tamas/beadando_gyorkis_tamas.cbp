@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="constants.hpp" />
 		<Unit filename="contractor.cpp" />
 		<Unit filename="contractor.hpp" />
 		<Unit filename="date.cpp" />

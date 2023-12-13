@@ -8,8 +8,8 @@ using namespace std;
 class Contractor : public Worker
 {
 public:
-    Contractor(string name, int birthYear, int birthMonth, int birthDay, int workHours, int hourlyWage):
-        Worker(name, birthYear, birthMonth, birthDay), workHours_m(workHours), hourlyWage_m(hourlyWage) {}
+    Contractor(string name, Date birthDay, int workHours, int hourlyWage):
+        Worker(name, birthDay), workHours_m(workHours), hourlyWage_m(hourlyWage) {}
 
         int workHours() {return workHours_m;}
         void setWorkHours(int value) {workHours_m = value;}

@@ -13,7 +13,7 @@ int Contractor::getWageForMonth()
 
 int Contractor::getContribution()
 {
-    return round(getWageForMonth() * contractor_cont);
+    return round(getWageForMonth() * contractor_contributon);
 }
 
 ostream& operator<<(ostream &s, Contractor& e)

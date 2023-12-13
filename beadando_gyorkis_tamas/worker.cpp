@@ -4,10 +4,10 @@
 
 using namespace std;
 
-ostream& operator<<(ostream &s, Worker& w)
+ostream& Worker::operator<<(ostream &s)
 {
-    Date d = w.birthDate();
-    s << w.name() << ", " << d;
+    Date d = birthDate();
+    s << name() << ", " << d;
     return s;
 }
 

@@ -3,13 +3,15 @@
 #include "date.hpp"
 #include "worker.hpp"
 #include <string>
+#include "constants.hpp"
+#include <cmath>
 
 using namespace std;
 
-ostream& operator<<(ostream &s, Employee& e)
+ostream& Employee::operator<<(ostream &s)
 {
-    s << "Employee: " << static_cast<Worker&>(e) << ", Work days: " << e.workDays() << ", Sick days: " << e.sickDays();
-    s << ", MonthlyWage: " << e.monthlyWage();
+    Date a = birthDate();
+    s << "Employee: " << "Name: " << name() << ", BirthDay: " << a;
     return s;
 }
 
@@ -20,5 +22,5 @@ int Employee::getWageForMonth()
 
 int Employee::getContribution()
 {
-    return 0;
+    return round(getWageForMonth() * employee_contribution);
 }

@@ -10,7 +10,7 @@ using namespace std;
 class Worker
 {
 public:
-    Worker(string name, int birthYear, int birthMonth, int birthDay) : name_m(name), birthDate_m(birthYear, birthMonth, birthDay) {}
+    Worker(string name, Date birthDay) : name_m(name), birthDate_m(birthDay) {}
 
     string name() {return name_m;}
     Date birthDate() {return birthDate_m;}
@@ -21,6 +21,8 @@ public:
     virtual int getWageForMonth() = 0;
     virtual int getContribution() = 0;
 
+    virtual ostream& operator<<(ostream& s);
+
     int getWageAndContribution();
     virtual ~Worker() {};
 private:
@@ -28,4 +30,4 @@ private:
     Date birthDate_m;
 };
 
-ostream& operator<<(ostream& s, Worker& w);
+//ostream& operator<<(ostream& s, Worker& w);

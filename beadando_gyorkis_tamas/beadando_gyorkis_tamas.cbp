@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="checkedReading.cpp" />
+		<Unit filename="checkedReading.hpp" />
 		<Unit filename="constants.hpp" />
 		<Unit filename="contractor.cpp" />
 		<Unit filename="contractor.hpp" />
@@ -42,6 +44,8 @@
 		<Unit filename="leader.cpp" />
 		<Unit filename="leader.hpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="menu.cpp" />
+		<Unit filename="menu.hpp" />
 		<Unit filename="worker.cpp" />
 		<Unit filename="worker.hpp" />
 		<Extensions />

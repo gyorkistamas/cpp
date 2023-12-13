@@ -1,13 +1,9 @@
 # depslib dependency file v1.0
-1702388146 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
+1702453655 source:d:\projects\cpp\beadando_gyorkis_tamas\main.cpp
 	<iostream>
-	"worker.hpp"
-	"date.hpp"
-	"employee.hpp"
-	"contractor.hpp"
-	"leader.hpp"
+	"menu.hpp"
 
-1702381229 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
+1702455386 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
 	<string>
 	"date.hpp"
 	<iostream>
@@ -19,46 +15,79 @@
 	"date.hpp"
 	<iostream>
 
-1702381299 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
+1702455488 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
-1702381504 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
+1702452500 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
 	"employee.hpp"
 	<iostream>
 	"date.hpp"
 	"worker.hpp"
 	<string>
+	"constants.hpp"
+	<cmath>
 
-1702381292 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
+1702455408 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
 	"worker.hpp"
 	<iostream>
 	<string>
 
-1702382013 d:\projects\cpp\beadando_gyorkis_tamas\contractor.hpp
+1702452030 d:\projects\cpp\beadando_gyorkis_tamas\contractor.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
 1702383022 source:d:\projects\cpp\beadando_gyorkis_tamas\constants.cpp
 
-1702388252 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
+1702452494 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
 	"contractor.hpp"
 	<string>
 	<iostream>
 	"constants.hpp"
 	<cmath>
 
-1702387590 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
+1702452516 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
 	"leader.hpp"
 	<string>
 	<iostream>
+	<cmath>
+	"constants.hpp"
 
-1702387348 d:\projects\cpp\beadando_gyorkis_tamas\leader.hpp
+1702452481 d:\projects\cpp\beadando_gyorkis_tamas\leader.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
-1702387899 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
+1702452425 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
+
+1702454945 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
+	<string>
+	<cmath>
+	<vector>
+	"worker.hpp"
+	"employee.hpp"
+	"contractor.hpp"
+	"leader.hpp"
+	"menu.hpp"
+	"date.hpp"
+	"checkedReading.hpp"
+
+1702453581 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
+	<string>
+	<cmath>
+	<vector>
+	"worker.hpp"
+	"employee.hpp"
+	"contractor.hpp"
+	"leader.hpp"
+
+1702455225 source:d:\projects\cpp\beadando_gyorkis_tamas\checkedreading.cpp
+	<iostream>
+	<string>
+	"checkedReading.hpp"
+
+1702454510 d:\projects\cpp\beadando_gyorkis_tamas\checkedreading.hpp
+	<string>
 

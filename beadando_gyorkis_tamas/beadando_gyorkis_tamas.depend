@@ -67,7 +67,7 @@
 
 1702661032 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
 
-1702662734 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
+1702664658 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
 	<string>
 	<cmath>
 	<vector>
@@ -81,6 +81,8 @@
 	"checkedReading.hpp"
 	"filter_menu.hpp"
 	<fstream>
+	<sstream>
+	<iostream>
 
 1702662663 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
 	<string>

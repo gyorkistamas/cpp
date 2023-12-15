@@ -11,6 +11,8 @@
 #include "checkedReading.hpp"
 #include "filter_menu.hpp"
 #include <fstream>
+#include <sstream>
+#include <iostream>
 
 Menu::Menu()
 {
@@ -242,16 +244,62 @@ int Menu::getNextId()
 
 void Menu::readFile()
 {
-    string line;
-
-    ifstream backupFile("backup.csv");
-
-    while (getline(backupFile, line))
+    try
     {
+        string line;
 
+        ifstream backupFile("backup.csv");
+
+        while (getline(backupFile, line))
+        {
+            try
+            {
+                std::istringstream iss(line);
+
+                vector<string> split;
+
+                string temp;
+                while (getline(iss, temp, ';'))
+                {
+                    split.push_back(temp);
+                }
+
+                cout << split[0];
+
+                int id = getNextId();
+                Address a(split[2], stoi(split[3]), split[4], split[5], stoi(split[6]));
+                Worker* w;
+
+                if (split[0] == "E")
+                {
+                    w = new Employee(id, split[1], a, stoi(split[7]), stoi(split[8]), stoi(split[9]));
+                }
+
+                if (split[0] == "C")
+                {
+                    w = new Contractor(id, split[1], a, stoi(split[7]), stoi(split[8]));
+                }
+
+                if (split[0] == "L")
+                {
+                    w = new Leader(id, split[1], a, stoi(split[7]));
+                }
+
+                workers_m.push_back(w);
+            }
+            catch(...)
+            {
+                cout << "Error when reading a line of the file, maybe the file is corrupted" << endl;
+            }
+
+        }
+
+        backupFile.close();
     }
-
-    backupFile.close();
+    catch(...)
+    {
+        cout << "An error occurred while opening the file, import aborted" << endl;
+    }
 }
 
 void Menu::storeFile()

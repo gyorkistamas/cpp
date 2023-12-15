@@ -13,6 +13,7 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include "constants.hpp"
 
 Menu::Menu()
 {
@@ -232,6 +233,7 @@ void Menu::companyData()
     }
 
     cout << "Company data:" << endl;
+    cout << "Company revenue: " << company_revenue << endl;
     cout << "All company payout: " << companyPayout << endl;
     cout << "All company wages payout: " << companyWages << endl;
     cout << "All company contribution payout: " << companyContribution << endl;
@@ -263,8 +265,6 @@ void Menu::readFile()
                 {
                     split.push_back(temp);
                 }
-
-                cout << split[0];
 
                 int id = getNextId();
                 Address a(split[2], stoi(split[3]), split[4], split[5], stoi(split[6]));
@@ -300,6 +300,8 @@ void Menu::readFile()
     {
         cout << "An error occurred while opening the file, import aborted" << endl;
     }
+
+    cout << "Reading file is done" << endl;
 }
 
 void Menu::storeFile()

@@ -9,6 +9,12 @@
 #include "address.hpp"
 #include "checkedReading.hpp"
 
+template<typename Base, typename T>
+bool instanceof(const T *ptr) {
+   return dynamic_cast<const Base*>(ptr) != nullptr;
+}
+
+
 void FilterMenu::execute()
 {
     int selection;
@@ -19,8 +25,11 @@ void FilterMenu::execute()
         cout << "1. Filter by ID" << endl;
         cout << "2. Filter by name" << endl;
         cout << "3. Filter by country" << endl;
-        cout << "4. Show filtered data" << endl;
-        cout << "5. Exit filtering back to main menu" << endl << endl;
+        cout << "4. Filter Employees" << endl;
+        cout << "5. Filter Contractors" << endl;
+        cout << "6. Filter Leaders" << endl << endl;
+        cout << "7. Show filtered data" << endl;
+        cout << "8. Exit filtering back to main menu" << endl << endl;
 
         cout << "Enter the selected item: ";
         selection = readChecked<int>();
@@ -29,9 +38,12 @@ void FilterMenu::execute()
         {
         case 1: filterById(); break;
         case 2: filterByName(); break;
-        case 3:  filterByCountry(); break;
-        case 4:  displayFiltered(); break;
-        case 5: isRunning = false; break;
+        case 3: filterByCountry(); break;
+        case 4: filterEmployees(); break;
+        case 5: filterContractors(); break;
+        case 6: filterLeaders(); break;
+        case 7: displayFiltered(); break;
+        case 8: isRunning = false; break;
         default: cout << endl << "Wrong selection, please try again" << endl; break;
         }
     }
@@ -112,4 +124,64 @@ void FilterMenu::displayFiltered()
     {
         cout << *w << endl;
     }
+}
+
+void FilterMenu::filterEmployees()
+{
+    std::vector<Worker*> toFilter;
+
+    if (firstFilter) toFilter = original_vector_m;
+    else toFilter = filtered_vector_m;
+
+    std::vector<Worker*> filtered;
+
+    for(Worker* w : toFilter)
+    {
+        if (instanceof<Employee>(w))
+        {
+            filtered.push_back(w);
+        }
+    }
+    firstFilter = false;
+    filtered_vector_m = filtered;
+}
+
+void FilterMenu::filterContractors()
+{
+        std::vector<Worker*> toFilter;
+
+    if (firstFilter) toFilter = original_vector_m;
+    else toFilter = filtered_vector_m;
+
+    std::vector<Worker*> filtered;
+
+    for(Worker* w : toFilter)
+    {
+        if (instanceof<Contractor>(w))
+        {
+            filtered.push_back(w);
+        }
+    }
+    firstFilter = false;
+    filtered_vector_m = filtered;
+}
+
+void FilterMenu::filterLeaders()
+{
+        std::vector<Worker*> toFilter;
+
+    if (firstFilter) toFilter = original_vector_m;
+    else toFilter = filtered_vector_m;
+
+    std::vector<Worker*> filtered;
+
+    for(Worker* w : toFilter)
+    {
+        if (instanceof<Leader>(w))
+        {
+            filtered.push_back(w);
+        }
+    }
+    firstFilter = false;
+    filtered_vector_m = filtered;
 }

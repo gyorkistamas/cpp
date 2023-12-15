@@ -19,6 +19,10 @@ public:
     void filterByName();
     void filterByCountry();
 
+    void filterEmployees();
+    void filterContractors();
+    void filterLeaders();
+
     void displayFiltered();
 
 private:

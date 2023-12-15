@@ -32,15 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="address.cpp" />
+		<Unit filename="address.hpp" />
 		<Unit filename="checkedReading.cpp" />
 		<Unit filename="checkedReading.hpp" />
 		<Unit filename="constants.hpp" />
 		<Unit filename="contractor.cpp" />
 		<Unit filename="contractor.hpp" />
-		<Unit filename="date.cpp" />
-		<Unit filename="date.hpp" />
 		<Unit filename="employee.cpp" />
 		<Unit filename="employee.hpp" />
+		<Unit filename="filter_menu.cpp" />
+		<Unit filename="filter_menu.hpp" />
 		<Unit filename="leader.cpp" />
 		<Unit filename="leader.hpp" />
 		<Unit filename="main.cpp" />

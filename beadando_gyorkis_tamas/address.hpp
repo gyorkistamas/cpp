@@ -22,6 +22,8 @@ public:
     void setStreet(string value) {street_m = value;}
     void setHouseNumber(int value) {house_number_m = value;}
 
+    void update();
+
 private:
     string country_m;
     int postcode_m;

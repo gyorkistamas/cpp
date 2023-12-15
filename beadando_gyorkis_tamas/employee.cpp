@@ -5,6 +5,7 @@
 #include <string>
 #include "constants.hpp"
 #include <cmath>
+#include "checkedReading.hpp"
 
 using namespace std;
 
@@ -29,6 +30,57 @@ int Employee::getWageForMonth()
 
 int Employee::getContribution()
 {
-    // Munkában töltött
+    // TODO Munkában töltött
     return round(getWageForMonth() * employee_contribution);
+}
+
+void Employee::update()
+{
+    bool doReading = true;
+
+    while (doReading)
+    {
+        cout << "1. Update name" << endl;
+        cout << "2. Update address" << endl;
+        cout << "3. Update workdays" << endl;
+        cout << "4. Update sickdays" << endl;
+        cout << "5. Update wage" << endl;
+        cout << "6. Go back" << endl;
+
+        cout << "Enter your selection: ";
+        int selection = readChecked<int>();
+
+        switch(selection)
+        {
+        case 1:
+            cout << "Enter new name: ";
+            setName(readChecked<string>());
+            break;
+        case 2:
+            {
+                Address a = address();
+                a.update();
+                setAddress(a);
+                break;
+            }
+        case 3:
+            cout << "Enter new workday count: ";
+            setWorkDays(readChecked<int>());
+            break;
+        case 4:
+            cout << "Enter new sick day count: ";
+            setSickDays(readChecked<int>());
+            break;
+        case 5:
+            cout << "Enter new wage: ";
+            setMonthlyWage(readChecked<int>());
+            break;
+        case 6:
+            doReading = false;
+            break;
+        default:
+            cout << "Invalid option, try again" << endl;
+            break;
+        }
+    }
 }

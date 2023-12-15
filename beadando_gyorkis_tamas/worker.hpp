@@ -23,6 +23,7 @@ public:
 
     virtual int getWageForMonth() = 0;
     virtual int getContribution() = 0;
+    virtual void update() = 0;
 
     virtual ostream& printData(ostream& s);
 

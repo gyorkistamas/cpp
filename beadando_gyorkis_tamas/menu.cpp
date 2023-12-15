@@ -1,6 +1,7 @@
 #include <string>
 #include <cmath>
 #include <vector>
+#include <algorithm>
 #include "worker.hpp"
 #include "employee.hpp"
 #include "contractor.hpp"
@@ -29,33 +30,32 @@ void Menu::execute()
     bool isRunning = true;
     while (isRunning)
     {
-        cout << "1. List all data" << endl;
-        cout << "2. Create new Employee" << endl << "3. Create new Contractor" << endl << "4. Create new Leader" << endl;
-        cout << "5. Filter data" << endl;
-
-
-        cout << "5. Exit" << endl << endl;
+        cout << endl << "--------------------------------" << endl;
+        cout << "1.  List all data" << endl;
+        cout << "2.  Create new Employee" << endl << "3.  Create new Contractor" << endl << "4.  Create new Leader" << endl;
+        cout << "5.  Filter data" << endl;
+        cout << "6.  Delete worker from list" << endl;
+        cout << "7.  Update worker information" << endl;
+        cout << "8.  Summarize company-wide payouts" << endl;
+        cout << "9.  Read data from csv file" << endl;
+        cout << "10. Store data in csv file" << endl;
+        cout << "11. Exit" << endl << endl;
 
         cout << "Enter the selected item: ";
         selection = readChecked<int>();
-
+        cout << endl;
         switch (selection)
         {
         case 1: listAllData(); break;
-
         case 2: newEmployee(); break;
-
         case 3: newContractor(); break;
-
         case 4: newLeader(); break;
-
         case 5: filterData(); break;
-
-        default:
-            cout << endl << "Wrong selection, please try again" << endl;
-            break;
+        case 6: deleteWorker(); break;
+        case 7: updateWorker(); break;
+        case 11: isRunning = false; break;
+        default: cout << endl << "Wrong selection, please try again" << endl; break;
         }
-        cout << endl;
     }
 }
 
@@ -151,4 +151,60 @@ void Menu::filterData()
 {
     FilterMenu menu(workers_m);
     menu.execute();
+}
+
+void Menu::deleteWorker()
+{
+    cout << "ID of the worker: ";
+    int id = readChecked<int>();
+
+    Worker* selected = NULL;
+
+    for(Worker* w : workers_m)
+    {
+        if (w->id() == id)
+        {
+            selected = w;
+            break;
+        }
+    }
+
+    if (selected != NULL)
+    {
+        auto pos = std::find(workers_m.begin(), workers_m.end(), selected);
+        workers_m.erase(pos);
+        delete selected;
+        cout << "Worker deleted" << endl;
+    }
+    else
+    {
+        cout << "Worker not found with that ID" << endl;
+    }
+
+}
+
+void Menu::updateWorker()
+{
+    cout << "ID of the worker: ";
+    int id = readChecked<int>();
+
+    Worker* selected = NULL;
+
+    for(Worker* w : workers_m)
+    {
+        if (w->id() == id)
+        {
+            selected = w;
+            break;
+        }
+    }
+
+    if (selected != NULL)
+    {
+        selected->update();
+    }
+    else
+    {
+        cout << "Worker not found with that ID" << endl;
+    }
 }

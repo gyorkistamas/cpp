@@ -4,7 +4,7 @@
 	"menu.hpp"
 	"employee.hpp"
 
-1702640683 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
+1702653326 d:\projects\cpp\beadando_gyorkis_tamas\worker.hpp
 	<string>
 	"address.hpp"
 	<iostream>
@@ -16,12 +16,12 @@
 	"date.hpp"
 	<iostream>
 
-1702640704 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
+1702653843 d:\projects\cpp\beadando_gyorkis_tamas\employee.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
-1702640836 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
+1702654441 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
 	"employee.hpp"
 	<iostream>
 	"date.hpp"
@@ -29,6 +29,7 @@
 	<string>
 	"constants.hpp"
 	<cmath>
+	"checkedReading.hpp"
 
 1702640799 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
 	"worker.hpp"
@@ -36,38 +37,41 @@
 	<string>
 	"address.hpp"
 
-1702640695 d:\projects\cpp\beadando_gyorkis_tamas\contractor.hpp
+1702653874 d:\projects\cpp\beadando_gyorkis_tamas\contractor.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
 1702383022 source:d:\projects\cpp\beadando_gyorkis_tamas\constants.cpp
 
-1702640861 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
+1702654713 source:d:\projects\cpp\beadando_gyorkis_tamas\contractor.cpp
 	"contractor.hpp"
 	<string>
 	<iostream>
 	"constants.hpp"
 	<cmath>
+	"checkedReading.hpp"
 
-1702640816 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
+1702655440 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
 	"leader.hpp"
 	<string>
 	<iostream>
 	<cmath>
 	"constants.hpp"
+	"checkedReading.hpp"
 
-1702640711 d:\projects\cpp\beadando_gyorkis_tamas\leader.hpp
+1702653903 d:\projects\cpp\beadando_gyorkis_tamas\leader.hpp
 	<string>
 	"worker.hpp"
 	<iostream>
 
 1702452425 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
 
-1702641692 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
+1702655333 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
 	<string>
 	<cmath>
 	<vector>
+	<algorithm>
 	"worker.hpp"
 	"employee.hpp"
 	"contractor.hpp"
@@ -77,7 +81,7 @@
 	"checkedReading.hpp"
 	"filter_menu.hpp"
 
-1702640089 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
+1702653059 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
 	<string>
 	<cmath>
 	<vector>
@@ -94,16 +98,17 @@
 1702454510 d:\projects\cpp\beadando_gyorkis_tamas\checkedreading.hpp
 	<string>
 
-1702637401 source:d:\projects\cpp\beadando_gyorkis_tamas\address.cpp
+1702653734 source:d:\projects\cpp\beadando_gyorkis_tamas\address.cpp
 	"address.hpp"
 	<string>
 	<iostream>
+	"checkedReading.hpp"
 
-1702637322 d:\projects\cpp\beadando_gyorkis_tamas\address.hpp
+1702653357 d:\projects\cpp\beadando_gyorkis_tamas\address.hpp
 	<string>
 	<iostream>
 
-1702641751 source:d:\projects\cpp\beadando_gyorkis_tamas\filter_menu.cpp
+1702644551 source:d:\projects\cpp\beadando_gyorkis_tamas\filter_menu.cpp
 	<string>
 	<cmath>
 	<vector>

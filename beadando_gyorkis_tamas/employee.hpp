@@ -23,6 +23,7 @@ public:
 
     int getWageForMonth();
     int getContribution();
+    void update();
 
 private :
     int workDays_m;

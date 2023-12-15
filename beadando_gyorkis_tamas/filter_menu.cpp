@@ -18,6 +18,7 @@ void FilterMenu::execute()
         cout << "1. Filter by name" << endl;
         cout << "2. Filter by country" << endl;
         cout << "3. Show filtered data" << endl;
+        cout << "4. Exit filtering back to main menu" << endl;
 
         cout << "Enter the selected item: ";
         selection = readChecked<int>();
@@ -26,11 +27,11 @@ void FilterMenu::execute()
         {
         case 1: filterByName(); break;
 
-        case 2:  break;
+        case 2: filterByCountry(); break;
 
         case 3:  displayFiltered(); break;
 
-        case 4:  break;
+        case 4:  isRunning = false; break;
 
         case 5: break;
 
@@ -57,6 +58,29 @@ void FilterMenu::filterByName()
     for(Worker* w : toFilter)
     {
         if (w->name() == name)
+        {
+            filtered.push_back(w);
+        }
+    }
+    firstFilter = false;
+    filtered_vector_m = filtered;
+}
+
+void FilterMenu::filterByCountry()
+{
+    std::vector<Worker*> toFilter;
+
+    if (firstFilter) toFilter = original_vector_m;
+    else toFilter = filtered_vector_m;
+
+    cout << "Country to filter for: ";
+    string country = readChecked<string>();
+
+    std::vector<Worker*> filtered;
+
+    for(Worker* w : toFilter)
+    {
+        if (w->address().country() == country)
         {
             filtered.push_back(w);
         }

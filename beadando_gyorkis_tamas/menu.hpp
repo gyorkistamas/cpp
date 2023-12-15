@@ -20,8 +20,9 @@ private:
     void newLeader();
 
     void listAllData();
-
     void filterData();
+    void deleteWorker();
+    void updateWorker();
 
     std::vector<Worker*> workers_m;
 };

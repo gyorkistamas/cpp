@@ -17,6 +17,7 @@ public:
     ostream& printData(ostream& s);
     int getWageForMonth();
     int getContribution();
+    void update();
 
 private:
     int fixWage_m;

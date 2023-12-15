@@ -5,6 +5,11 @@
 
 using namespace std;
 
+/*
+ * A vezetõ osztály
+ * Havi fix díjat kap, ezt konstruktorban kérjük be, az objektum frissítésével módosítható
+ * Illetve még hozzá jön ehhez a céges bevétel 1%-a (vagy levonásban)
+ */
 class Leader : public Worker
 {
 public:

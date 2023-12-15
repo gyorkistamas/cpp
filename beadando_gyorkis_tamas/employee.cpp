@@ -18,13 +18,13 @@ ostream& Employee::printData(ostream& s)
     return s;
 }
 
+/** Alkalmazott esetén havi fix munkabérért dolgozik (30 napos hónapokkal számolva)
+ *  A ténylegesen ledolgozott napokból, illetve a betegszabadságból számolódik a tényleges bérdíj
+ */
 int Employee::getWageForMonth()
 {
-    // 30 napos hónapokkal számolva
     int dailyWage = round(monthlyWage() / 30);
-
     int wage = dailyWage * workDays();
-
     wage += round(dailyWage * sickDays() * 0.6);
     return wage;
 }
@@ -35,6 +35,8 @@ int Employee::getContribution()
     return round(getWageForMonth() * employee_contribution);
 }
 
+/** Alkalmazott frissítése menü rendszer segítségével
+ */
 void Employee::update()
 {
     bool doReading = true;
@@ -88,6 +90,8 @@ void Employee::update()
     }
 }
 
+/** Alkalmazott fájlba írásakor használandó
+ */
 string Employee::getFileFormat()
 {
     string line = "E;" + name() + ";" + address().getFileFormat() + ";" + to_string(workDays()) + ";" + to_string(sickDays()) + ";" + to_string(monthlyWage());

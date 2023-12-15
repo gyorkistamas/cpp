@@ -9,12 +9,20 @@
 #include "address.hpp"
 #include "checkedReading.hpp"
 
+/** \brief Az alkalmazott típus szûréskor használandó
+ *
+ * Template metódus, hogy megvizsgáljuk,
+ * hogy egy adott objektum példánya-e
+ * a megadott típusnak (sikeres-e a castolás)
+ */
 template<typename Base, typename T>
-bool instanceof(const T *ptr) {
-   return dynamic_cast<const Base*>(ptr) != nullptr;
+bool instanceof(T *ptr) {
+   return dynamic_cast<Base*>(ptr) != nullptr;
 }
 
 
+/** \brief A szűrés menü elindítása
+ */
 void FilterMenu::execute()
 {
     int selection;
@@ -49,10 +57,15 @@ void FilterMenu::execute()
     }
 }
 
+/** \brief Szűrés ID alapján
+ *  Ha már volt előtte szűrés, akkro abból a listából szűrünk, egyébként az eredetiből
+ */
 void FilterMenu::filterById()
 {
     std::vector<Worker*> toFilter;
 
+    // Ha nem volt még szűrés, akkor az erdeti listán szűrünk
+    // egyébként a már szűrt listát szűrjük újra.
     if (firstFilter) toFilter = original_vector_m;
     else toFilter = filtered_vector_m;
 
@@ -72,6 +85,8 @@ void FilterMenu::filterById()
     filtered_vector_m = filtered;
 }
 
+/** \brief Szűrés név alapján
+ */
 void FilterMenu::filterByName()
 {
     std::vector<Worker*> toFilter;
@@ -95,6 +110,8 @@ void FilterMenu::filterByName()
     filtered_vector_m = filtered;
 }
 
+/** \brief Szűrés Ország alapján
+ */
 void FilterMenu::filterByCountry()
 {
     std::vector<Worker*> toFilter;
@@ -118,6 +135,8 @@ void FilterMenu::filterByCountry()
     filtered_vector_m = filtered;
 }
 
+/** \brief Szűrt elemek megjelenítése
+ */
 void FilterMenu::displayFiltered()
 {
     for (Worker* w : filtered_vector_m)
@@ -126,6 +145,8 @@ void FilterMenu::displayFiltered()
     }
 }
 
+/** \brief Alkalmazottak szűrése
+ */
 void FilterMenu::filterEmployees()
 {
     std::vector<Worker*> toFilter;
@@ -146,6 +167,8 @@ void FilterMenu::filterEmployees()
     filtered_vector_m = filtered;
 }
 
+/** \brief Szerződésesek szűrése
+ */
 void FilterMenu::filterContractors()
 {
         std::vector<Worker*> toFilter;
@@ -166,6 +189,8 @@ void FilterMenu::filterContractors()
     filtered_vector_m = filtered;
 }
 
+/** \brief Vezetők szűrése
+ */
 void FilterMenu::filterLeaders()
 {
         std::vector<Worker*> toFilter;

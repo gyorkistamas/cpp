@@ -5,12 +5,16 @@
 
 using namespace std;
 
+/** << operátor túlterhelés
+ */
 ostream& operator<<(ostream& s, Address& a)
 {
     s << a.country() << ", " << a.postCode() << ", " << a.city() << ", " << a.street() << " street " << a.houseNumber() << ". ";
     return s;
 }
 
+// Bármely dolgozónak a lakcím módosítása során ez a metódus hívódik meg,
+// ahol menûbõl kiválaszthatja, hogy a cím melyik részét szeretné megváltoztatni
 void Address::update()
 {
     bool doReading = true;
@@ -59,6 +63,8 @@ void Address::update()
     }
 }
 
+// Cím objektum átalakítása olyan formátumra,
+// ahogy a csv fájlba fog íródni
 string Address::getFileFormat()
 {
     string line = country() + ";" + to_string(postCode()) + ";" + city() + ";" + street() + ";" + to_string(houseNumber());

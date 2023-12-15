@@ -36,6 +36,8 @@ int readChecked()
     return retval;
 }
 
+
+
 template<>
 string readChecked()
 {
@@ -43,8 +45,10 @@ string readChecked()
     bool doReading = true;
     while(doReading)
     {
+        // Azért szükséges, hogy a szóközök ne okozzanak problémát, azok is be legyenek olvasva
         getline(cin >> ws, retval);
         doReading = false;
+        // Megvizsgálom azt is, hogy nehogy üres string legyen
         if (retval.length() == 0)
         {
             cout << "Please don't leave it empty, try again: ";

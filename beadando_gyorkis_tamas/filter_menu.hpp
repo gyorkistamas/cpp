@@ -7,6 +7,17 @@
 #include "contractor.hpp"
 #include "leader.hpp"
 
+/**
+ * A szûrés egy külön osztály segítségével van megvalósítva
+ * Ehhez bekérjük a dolgozókat tartalmazó vektort, amin szűrni szeretnénk
+ * Lehetõség van szûrni ID, név, Ország, ileltve munkaerõ típus szerint szûrni.
+ * Ezeket lehet egymásra halmozni, és kapcsolattal
+ * Majd végül megjeleníteni
+ * (Ha egy emberre vagyunk kíváncsiak, akkor szûrhetünk névre vagy ID-ra, és csak az fog kilistázódni)
+ * Szûrés során megjelenik a dolgozóhoz tartozó munkabér, fizetendõ járulék, illetve a cég által összesen fizetendõ összeg
+ * Visszalépve a menüben, a dolgozó adait frissítve ezek újraszámolódnak természetesen
+ */
+
 class FilterMenu
 {
 public:

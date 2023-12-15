@@ -7,11 +7,15 @@
 
 using namespace std;
 
+/** A szerzõdéses dolgozónak a ledolgozott órák ileltve órabíj szorzata adja a bérdíj-át.
+ */
 int Contractor::getWageForMonth()
 {
     return workHours() * hourlyWage();
 }
 
+/** A fizetendõ járulékok számítása
+ */
 int Contractor::getContribution()
 {
     return round(getWageForMonth() * contractor_contributon);
@@ -26,6 +30,8 @@ ostream& Contractor::printData(ostream &s)
     return s;
 }
 
+/** Szerzõdéses dolgozó frissítése menü rendszer megoldással
+ */
 void Contractor::update()
 {
     bool doReading = true;
@@ -74,6 +80,8 @@ void Contractor::update()
     }
 }
 
+/** Az objektum fájlba írando formátumának létrehozása
+ */
 string Contractor::getFileFormat()
 {
     string line = "C;" + name() + ";" + address().getFileFormat() + ";" + to_string(workHours()) + ";" + to_string(hourlyWage());

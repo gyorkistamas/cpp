@@ -20,6 +20,10 @@ Menu::Menu()
     execute();
 }
 
+/** \brief Desktruktor
+ *  Menü törlése esetén biztonsági mentésként kimentjük az adatokat
+ * és töröljük a pointereket
+ */
 Menu::~Menu()
 {
     storeFile();
@@ -29,6 +33,8 @@ Menu::~Menu()
     }
 }
 
+/** Menü indítása
+ */
 void Menu::execute()
 {
     int selection;
@@ -67,6 +73,8 @@ void Menu::execute()
     }
 }
 
+/** Cím adatok bekérése és létrehozása
+ */
 Address getAddress()
 {
     cout << "Country: ";
@@ -88,6 +96,8 @@ Address getAddress()
     return a;
 }
 
+/** Új dolgozó létrehozása
+ */
 void Menu::newEmployee()
 {
     int id = getNextId();
@@ -110,6 +120,8 @@ void Menu::newEmployee()
     workers_m.push_back(e);
 }
 
+/** Új szerződéses munkás létrehozása
+ */
 void Menu::newContractor()
 {
     int id = getNextId();
@@ -129,6 +141,8 @@ void Menu::newContractor()
     workers_m.push_back(e);
 }
 
+/** Új vezető létrehozása
+ */
 void Menu::newLeader()
 {
     int id = getNextId();
@@ -158,6 +172,11 @@ void Menu::filterData()
     menu.execute();
 }
 
+/** \brief Dolgozó törlése
+ *  Megnézzük, hogy van-e a keresett ID-val rendelkező dolgozó
+ * (ID meghatározható listázás, szűrés segítségével)
+ *  Ha igen, akkor töröljük a listából, majd a pointer-it is.
+ */
 void Menu::deleteWorker()
 {
     cout << "ID of the worker: ";
@@ -176,6 +195,7 @@ void Menu::deleteWorker()
 
     if (selected != NULL)
     {
+        // Vektorban való pozíció kikeresése
         auto pos = std::find(workers_m.begin(), workers_m.end(), selected);
         workers_m.erase(pos);
         delete selected;
@@ -188,6 +208,11 @@ void Menu::deleteWorker()
 
 }
 
+/** \brief Dolgozó frissítése
+ *  Minden dolgozó rendelkezik update()
+ *  metódussal, ezt meghívva egy menü jelenik meg,
+ *  amiben ki lehet választani, hogy mit szeretnénk frissíteni.
+ */
 void Menu::updateWorker()
 {
     cout << "ID of the worker: ";
@@ -214,15 +239,21 @@ void Menu::updateWorker()
     }
 }
 
+/** \brief Céges adatok kiszámítása
+ *  Kiszámoljuk a teljes céges adatokat:
+ *  - Az egészet, amit ki kell fizetni a cégnek
+ *  - Megjelenítjük a céges bevételt is (a konstansból)
+ *  - Illetve külön a bér és járulék is megjelenik
+ */
 void Menu::companyData()
 {
-    // Teljes c�ges b�rk�lts�g
+    // Teljes céges bérköltség
     int companyPayout = 0;
 
-    // Csak a fizet�sek �sszege
+    // Csak a fizetések összege
     int companyWages = 0;
 
-    // Csak a j�rul�kok �sszege
+    // Csak a járulékok összege
     int companyContribution = 0;
 
     for (Worker* w : workers_m)
@@ -233,17 +264,25 @@ void Menu::companyData()
     }
 
     cout << "Company data:" << endl;
-    cout << "Company revenue: " << company_revenue << endl;
-    cout << "All company payout: " << companyPayout << endl;
-    cout << "All company wages payout: " << companyWages << endl;
-    cout << "All company contribution payout: " << companyContribution << endl;
+    cout << "\tCompany revenue: " << company_revenue << endl;
+    cout << "\tAll company payout: " << companyPayout << endl;
+    cout << "\tAll company wages payout: " << companyWages << endl;
+    cout << "\tAll company contribution payout: " << companyContribution << endl;
 }
 
+/** A következő ID a vektor hossza
+ */
 int Menu::getNextId()
 {
     return workers_m.size();
 }
 
+/** \brief Fájl beolvasása
+ *  Megnyitjuk a "backup.csv" fájlt,
+ *  majd soronként beolvassuk az adatokat.
+ *  Ezeket a ";" mentén elválasztjuk és feldolgozzuk
+ *  A sor első eleme tartalmazza, hogy Alkalmazott, Szerződéses, vagy Vezetőről van szó (E, C, vagy L).
+ */
 void Menu::readFile()
 {
     try
@@ -304,6 +343,11 @@ void Menu::readFile()
     cout << "Reading file is done" << endl;
 }
 
+/** \brief Kiíratás fájlba
+ *  Megnyitjuk a "backup.csv" fájlt, majd kiírjuk az adatoakt soronként.
+ *  Minden dolgozó rendelkezik getFileFormat() metódussal, így azt meghívva
+ *  könnyedén kiírható a sor a fájlba.
+ */
 void Menu::storeFile()
 {
     ofstream workerFile("backup.csv");

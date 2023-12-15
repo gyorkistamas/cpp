@@ -18,6 +18,9 @@ ostream& Leader::printData(ostream &s)
     return s;
 }
 
+/** \brief Havi bér számolása
+ *  A vezetõ esetén fix havibér, plussz a cég bevételének 1%-a adja a havidíjat
+ */
 int Leader::getWageForMonth()
 {
     int wage = fixWage() + round(company_revenue * leader_company_share);

@@ -4,6 +4,9 @@
 
 using namespace std;
 
+/*
+ * Cím tárolására szolgáló osztály. Az országot, irányítószámot, a várost, utcát és házszámot tároljuk
+ */
 class Address
 {
 public:

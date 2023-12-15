@@ -21,13 +21,14 @@ public:
     void setName(string name) {name_m = name;}
     void setAddress(Address a) {address_m = a;}
 
+    int getWageAndContribution();
+
     virtual int getWageForMonth() = 0;
     virtual int getContribution() = 0;
     virtual void update() = 0;
+    virtual ostream& printData(ostream& s) = 0;
+    virtual string getFileFormat() = 0;
 
-    virtual ostream& printData(ostream& s);
-
-    int getWageAndContribution();
     virtual ~Worker() {};
 private:
     int id_m;

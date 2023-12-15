@@ -21,6 +21,7 @@ public:
         int getWageForMonth();
         int getContribution();
         void update();
+        string getFileFormat();
 
 private:
     int workHours_m;

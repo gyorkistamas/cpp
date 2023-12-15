@@ -15,6 +15,7 @@ public:
 
     void execute();
 
+    void filterById();
     void filterByName();
     void filterByCountry();
 

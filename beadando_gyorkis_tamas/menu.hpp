@@ -25,6 +25,10 @@ private:
     void updateWorker();
 
     void companyData();
+    int getNextId();
+
+    void readFile();
+    void storeFile();
 
     std::vector<Worker*> workers_m;
 };

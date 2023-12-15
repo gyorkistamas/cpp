@@ -20,8 +20,9 @@ int Contractor::getContribution()
 ostream& Contractor::printData(ostream &s)
 {
     Address a = address();
-    s << "Contractor id: " << id() << ", Name: " << name() << ", Address: " << a << ", WorkHours: " << workHours() << ", Wage: " << getWageForMonth();
-    s << ", Contribution: " << getContribution();
+    s << "Id: " << id() << ", Contractor: " << name() << ", Address: " << a << endl;
+    s << "\t" << "Work hours: " << workHours() << ", Hourly wage: " << hourlyWage() << endl;
+    s << "\t" <<"Wage for month: " << getWageForMonth() << ", Contribution to be payed: " << getContribution() << ", Total: " << getWageAndContribution();
     return s;
 }
 
@@ -31,6 +32,8 @@ void Contractor::update()
 
     while (doReading)
     {
+        cout << "Editing Contractor with id " << id() << ": " << name() << endl << endl;
+
         cout << "1. Update name" << endl;
         cout << "2. Update address" << endl;
         cout << "3. Update work hours" << endl;
@@ -69,4 +72,10 @@ void Contractor::update()
             break;
         }
     }
+}
+
+string Contractor::getFileFormat()
+{
+    string line = "C;" + name() + ";" + address().getFileFormat() + ";" + to_string(workHours()) + ";" + to_string(hourlyWage());
+    return line;
 }

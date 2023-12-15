@@ -24,6 +24,7 @@ public:
     int getWageForMonth();
     int getContribution();
     void update();
+    string getFileFormat();
 
 private :
     int workDays_m;

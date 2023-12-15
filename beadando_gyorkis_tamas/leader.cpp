@@ -10,7 +10,11 @@ using namespace std;
 ostream& Leader::printData(ostream &s)
 {
     Address a = address();
-    s << "Leader id: " << id() << ", Name: " << name() << ", Address: " << a << ", Fix wage: " << fixWage() << ", Wage for month (with company revenue): " << getWageForMonth();
+
+    s << "Id: " << id() << ", Leader: " << name() << ", Address: " << a << endl;
+    s << "\t" <<"Fix wage: " << fixWage() << endl;
+    s << "\t" <<"Wage for month: " << getWageForMonth() << ", Contribution to be payed: " << getContribution() << ", Total: " << getWageAndContribution();
+
     return s;
 }
 
@@ -32,6 +36,8 @@ void Leader::update()
 
     while (doReading)
     {
+        cout << "Editing Leader with id " << id() << ": " << name() << endl << endl;
+
         cout << "1. Update name" << endl;
         cout << "2. Update address" << endl;
         cout << "3. Update fix wage" << endl;
@@ -65,4 +71,10 @@ void Leader::update()
             break;
         }
     }
+}
+
+string Leader::getFileFormat()
+{
+    string line = "L;" + name() + ";" + address().getFileFormat() + ";" + to_string(fixWage());
+    return line;
 }

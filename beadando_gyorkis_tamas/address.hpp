@@ -23,6 +23,7 @@ public:
     void setHouseNumber(int value) {house_number_m = value;}
 
     void update();
+    string getFileFormat();
 
 private:
     string country_m;

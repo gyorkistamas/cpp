@@ -46,7 +46,7 @@ void Address::update()
             setStreet(readChecked<string>());
             break;
         case 5:
-            cout << "Enter new house numbe: ";
+            cout << "Enter new house number: ";
             setHouseNumber(readChecked<int>());
             break;
         case 6:
@@ -59,3 +59,8 @@ void Address::update()
     }
 }
 
+string Address::getFileFormat()
+{
+    string line = country() + ";" + to_string(postCode()) + ";" + city() + ";" + street() + ";" + to_string(houseNumber());
+    return line;
+}

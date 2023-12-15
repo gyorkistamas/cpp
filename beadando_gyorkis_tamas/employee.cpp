@@ -12,8 +12,9 @@ using namespace std;
 ostream& Employee::printData(ostream& s)
 {
     Address a = address();
-    s << "Employee id: " << id() << ", Name: " << name() << ", Address: " << a << ", WorkDays: " << workDays() << ", SickDays: " << sickDays();
-    s << ", Wage: " << getWageForMonth() << ", Contribution: " << getContribution();
+    s << "Id: " << id() << ", Employee: " << name() << ", Address: " << a << endl;
+    s << "\t" << "Working days: " << workDays() << ", Sick days: " << sickDays() << endl;
+    s << "\t" <<"Wage for month: " << getWageForMonth() << ", Contribution to be payed: " << getContribution() << ", Total: " << getWageAndContribution();
     return s;
 }
 
@@ -40,6 +41,8 @@ void Employee::update()
 
     while (doReading)
     {
+        cout << "Editing Employee with id " << id() << ": " << name() << endl << endl;
+
         cout << "1. Update name" << endl;
         cout << "2. Update address" << endl;
         cout << "3. Update workdays" << endl;
@@ -83,4 +86,10 @@ void Employee::update()
             break;
         }
     }
+}
+
+string Employee::getFileFormat()
+{
+    string line = "E;" + name() + ";" + address().getFileFormat() + ";" + to_string(workDays()) + ";" + to_string(sickDays()) + ";" + to_string(monthlyWage());
+    return line;
 }

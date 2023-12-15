@@ -18,6 +18,7 @@ public:
     int getWageForMonth();
     int getContribution();
     void update();
+    string getFileFormat();
 
 private:
     int fixWage_m;

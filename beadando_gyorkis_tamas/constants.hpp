@@ -6,4 +6,4 @@ const float leader_contribution = 1;
 
 const float leader_company_share = 0.1;
 
-const int company_revenue = 500;
+const int company_revenue = 50000;

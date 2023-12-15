@@ -15,32 +15,49 @@ void FilterMenu::execute()
     bool isRunning = true;
     while (isRunning)
     {
-        cout << "1. Filter by name" << endl;
-        cout << "2. Filter by country" << endl;
-        cout << "3. Show filtered data" << endl;
-        cout << "4. Exit filtering back to main menu" << endl;
+        cout << endl << "---------------------------" << endl;
+        cout << "1. Filter by ID" << endl;
+        cout << "2. Filter by name" << endl;
+        cout << "3. Filter by country" << endl;
+        cout << "4. Show filtered data" << endl;
+        cout << "5. Exit filtering back to main menu" << endl << endl;
 
         cout << "Enter the selected item: ";
         selection = readChecked<int>();
-
+        cout << endl;
         switch (selection)
         {
-        case 1: filterByName(); break;
-
-        case 2: filterByCountry(); break;
-
-        case 3:  displayFiltered(); break;
-
-        case 4:  isRunning = false; break;
-
-        case 5: break;
-
-        default:
-            cout << endl << "Wrong selection, please try again" << endl;
-            break;
+        case 1: filterById(); break;
+        case 2: filterByName(); break;
+        case 3:  filterByCountry(); break;
+        case 4:  displayFiltered(); break;
+        case 5: isRunning = false; break;
+        default: cout << endl << "Wrong selection, please try again" << endl; break;
         }
-        cout << endl;
     }
+}
+
+void FilterMenu::filterById()
+{
+    std::vector<Worker*> toFilter;
+
+    if (firstFilter) toFilter = original_vector_m;
+    else toFilter = filtered_vector_m;
+
+    cout << "Id to filter for: ";
+    int id = readChecked<int>();
+
+    std::vector<Worker*> filtered;
+
+    for(Worker* w : toFilter)
+    {
+        if (w->id() == id)
+        {
+            filtered.push_back(w);
+        }
+    }
+    firstFilter = false;
+    filtered_vector_m = filtered;
 }
 
 void FilterMenu::filterByName()

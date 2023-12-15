@@ -10,6 +10,7 @@
 #include "address.hpp"
 #include "checkedReading.hpp"
 #include "filter_menu.hpp"
+#include <fstream>
 
 Menu::Menu()
 {
@@ -18,6 +19,7 @@ Menu::Menu()
 
 Menu::~Menu()
 {
+    storeFile();
     for (Worker* worker_ptr :  workers_m)
     {
         delete worker_ptr;
@@ -54,6 +56,8 @@ void Menu::execute()
         case 6: deleteWorker(); break;
         case 7: updateWorker(); break;
         case 8: companyData(); break;
+        case 9: readFile(); break;
+        case 10: storeFile(); break;
         case 11: isRunning = false; break;
         default: cout << endl << "Wrong selection, please try again" << endl; break;
         }
@@ -83,8 +87,7 @@ Address getAddress()
 
 void Menu::newEmployee()
 {
-    cout << "Enter id: ";
-    int id = readChecked<int>();
+    int id = getNextId();
 
     cout << "Enter the name: ";
     string name = readChecked<string>();
@@ -106,8 +109,7 @@ void Menu::newEmployee()
 
 void Menu::newContractor()
 {
-    cout << "Enter id: ";
-    int id = readChecked<int>();
+    int id = getNextId();
 
     cout << "Enter the name: ";
     string name = readChecked<string>();
@@ -126,8 +128,7 @@ void Menu::newContractor()
 
 void Menu::newLeader()
 {
-    cout << "Enter id: ";
-    int id = readChecked<int>();
+    int id = getNextId();
 
     cout << "Enter the name: ";
     string name = readChecked<string>();
@@ -144,7 +145,7 @@ void Menu::listAllData()
 {
     for(Worker* w : workers_m)
     {
-        cout << (*w) << endl;
+        cout << (*w) << endl << endl;
     }
 }
 
@@ -232,4 +233,37 @@ void Menu::companyData()
     cout << "All company payout: " << companyPayout << endl;
     cout << "All company wages payout: " << companyWages << endl;
     cout << "All company contribution payout: " << companyContribution << endl;
+}
+
+int Menu::getNextId()
+{
+    return workers_m.size();
+}
+
+void Menu::readFile()
+{
+    string line;
+
+    ifstream backupFile("backup.csv");
+
+    while (getline(backupFile, line))
+    {
+
+    }
+
+    backupFile.close();
+}
+
+void Menu::storeFile()
+{
+    ofstream workerFile("backup.csv");
+
+    for (Worker* w : workers_m)
+    {
+        workerFile << w->getFileFormat();
+        workerFile << endl;
+    }
+    workerFile.close();
+
+    cout << "Data written to file successfully" << endl;
 }

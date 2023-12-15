@@ -52,7 +52,7 @@
 	<cmath>
 	"checkedReading.hpp"
 
-1702655440 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
+1702656694 source:d:\projects\cpp\beadando_gyorkis_tamas\leader.cpp
 	"leader.hpp"
 	<string>
 	<iostream>
@@ -67,7 +67,7 @@
 
 1702452425 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
 
-1702655333 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
+1702656515 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
 	<string>
 	<cmath>
 	<vector>
@@ -81,7 +81,7 @@
 	"checkedReading.hpp"
 	"filter_menu.hpp"
 
-1702653059 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
+1702656252 d:\projects\cpp\beadando_gyorkis_tamas\menu.hpp
 	<string>
 	<cmath>
 	<vector>

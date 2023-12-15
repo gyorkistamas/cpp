@@ -16,7 +16,9 @@ ostream& Leader::printData(ostream &s)
 
 int Leader::getWageForMonth()
 {
-    return fixWage() + round(company_revenue * leader_company_share);
+    int wage = fixWage() + round(company_revenue * leader_company_share);
+    if (wage < 0) return 0;
+    else return wage;
 }
 
 int Leader::getContribution()
@@ -26,7 +28,7 @@ int Leader::getContribution()
 
 void Leader::update()
 {
-        bool doReading = true;
+    bool doReading = true;
 
     while (doReading)
     {

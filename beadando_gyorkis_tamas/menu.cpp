@@ -53,6 +53,7 @@ void Menu::execute()
         case 5: filterData(); break;
         case 6: deleteWorker(); break;
         case 7: updateWorker(); break;
+        case 8: companyData(); break;
         case 11: isRunning = false; break;
         default: cout << endl << "Wrong selection, please try again" << endl; break;
         }
@@ -207,4 +208,28 @@ void Menu::updateWorker()
     {
         cout << "Worker not found with that ID" << endl;
     }
+}
+
+void Menu::companyData()
+{
+    // Teljes céges bérköltség
+    int companyPayout = 0;
+
+    // Csak a fizetések összege
+    int companyWages = 0;
+
+    // Csak a járulékok összege
+    int companyContribution = 0;
+
+    for (Worker* w : workers_m)
+    {
+        companyPayout += w->getWageAndContribution();
+        companyWages += w->getWageForMonth();
+        companyContribution += w->getContribution();
+    }
+
+    cout << "Company data:" << endl;
+    cout << "All company payout: " << companyPayout << endl;
+    cout << "All company wages payout: " << companyWages << endl;
+    cout << "All company contribution payout: " << companyContribution << endl;
 }

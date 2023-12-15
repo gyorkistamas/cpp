@@ -24,5 +24,7 @@ private:
     void deleteWorker();
     void updateWorker();
 
+    void companyData();
+
     std::vector<Worker*> workers_m;
 };

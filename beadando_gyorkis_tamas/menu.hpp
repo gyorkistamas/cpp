@@ -21,5 +21,7 @@ private:
 
     void listAllData();
 
+    void filterData();
+
     std::vector<Worker*> workers_m;
 };

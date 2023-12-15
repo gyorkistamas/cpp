@@ -1,13 +1,19 @@
 #include "worker.hpp"
 #include <iostream>
 #include <string>
+#include "address.hpp"
 
 using namespace std;
 
-ostream& Worker::operator<<(ostream &s)
+ostream& operator<<(ostream &s, Worker& w)
 {
-    Date d = birthDate();
-    s << name() << ", " << d;
+    return w.printData(s);
+}
+
+ostream& Worker::printData(ostream& s)
+{
+    Address a = address();
+    s << "Worker id: " << id() << "Name: " << name() << ", Address: " << a;
     return s;
 }
 

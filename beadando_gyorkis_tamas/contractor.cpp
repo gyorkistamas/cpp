@@ -16,8 +16,10 @@ int Contractor::getContribution()
     return round(getWageForMonth() * contractor_contributon);
 }
 
-ostream& operator<<(ostream &s, Contractor& e)
+ostream& Contractor::printData(ostream &s)
 {
-    s << "Contractor: " << static_cast<Worker&>(e) << ", Work hours: " << e.workHours() << ", Hourly wage: " << e.hourlyWage();
+    Address a = address();
+    s << "Contractor id: " << id() << ", Name: " << name() << ", Address: " << a << ", WorkHours: " << workHours() << ", Wage: " << getWageForMonth();
+    s << ", Contribution: " << getContribution();
     return s;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include "menu.hpp"
+#include "employee.hpp"
 
 using namespace std;
 

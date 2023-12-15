@@ -8,19 +8,27 @@
 
 using namespace std;
 
-ostream& Employee::operator<<(ostream &s)
+ostream& Employee::printData(ostream& s)
 {
-    Date a = birthDate();
-    s << "Employee: " << "Name: " << name() << ", BirthDay: " << a;
+    Address a = address();
+    s << "Employee id: " << id() << ", Name: " << name() << ", Address: " << a << ", WorkDays: " << workDays() << ", SickDays: " << sickDays();
+    s << ", Wage: " << getWageForMonth() << ", Contribution: " << getContribution();
     return s;
 }
 
 int Employee::getWageForMonth()
 {
-    return 0;
+    // 30 napos hónapokkal számolva
+    int dailyWage = round(monthlyWage() / 30);
+
+    int wage = dailyWage * workDays();
+
+    wage += round(dailyWage * sickDays() * 0.6);
+    return wage;
 }
 
 int Employee::getContribution()
 {
+    // Munkában töltött
     return round(getWageForMonth() * employee_contribution);
 }

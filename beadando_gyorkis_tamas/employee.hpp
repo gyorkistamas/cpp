@@ -8,8 +8,8 @@ using namespace std;
 class Employee : public Worker
 {
 public:
-    Employee(string name, Date birthDay, int workDays, int sickDays, int monthlyWage) :
-        Worker(name, birthDay), workDays_m(workDays), sickDays_m(sickDays), monthlyWage_m(monthlyWage) {}
+    Employee(int id, string name, Address address, int workDays, int sickDays, int monthlyWage) :
+        Worker(id, name, address), workDays_m(workDays), sickDays_m(sickDays), monthlyWage_m(monthlyWage) {}
 
     int workDays() {return workDays_m;}
     int sickDays() {return sickDays_m;}
@@ -19,7 +19,7 @@ public:
     void setSickDays(int days) {sickDays_m = days;}
     void setMonthlyWage(int wage) {monthlyWage_m = wage;}
 
-    ostream& operator<<(ostream &s);
+    ostream& printData(ostream& s);
 
     int getWageForMonth();
     int getContribution();
@@ -30,4 +30,3 @@ private :
     int monthlyWage_m;
 };
 
-// ostream& operator<<(ostream &s, Employee& e);

@@ -6,9 +6,10 @@
 
 using namespace std;
 
-ostream& operator<<(ostream &s, Leader& e)
+ostream& Leader::printData(ostream &s)
 {
-    s << "Leader: " << static_cast<Worker&>(e) << ", Fix wage: " << e.fixWage();
+    Address a = address();
+    s << "Leader id: " << id() << ", Name: " << name() << ", Address: " << a << ", Fix wage: " << fixWage() << ", Wage for month (with company revenue): " << getWageForMonth();
     return s;
 }
 

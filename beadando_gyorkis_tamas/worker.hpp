@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "date.hpp"
+#include "address.hpp"
 #include <iostream>
 
 using std::ostream;
@@ -10,24 +10,28 @@ using namespace std;
 class Worker
 {
 public:
-    Worker(string name, Date birthDay) : name_m(name), birthDate_m(birthDay) {}
+    Worker(int id, string name, Address address) : id_m(id), name_m(name), address_m(address) {}
+
+    int id() {return id_m;}
+    void setId(int value) {id_m = value;}
 
     string name() {return name_m;}
-    Date birthDate() {return birthDate_m;}
+    Address address() {return address_m;}
 
     void setName(string name) {name_m = name;}
-    void setBirthDate(int birthYear, int birthMonth, int birthDay) {birthDate_m = Date(birthYear, birthMonth, birthDay);}
+    void setAddress(Address a) {address_m = a;}
 
     virtual int getWageForMonth() = 0;
     virtual int getContribution() = 0;
 
-    virtual ostream& operator<<(ostream& s);
+    virtual ostream& printData(ostream& s);
 
     int getWageAndContribution();
     virtual ~Worker() {};
 private:
+    int id_m;
     string name_m;
-    Date birthDate_m;
+    Address address_m;
 };
 
-//ostream& operator<<(ostream& s, Worker& w);
+ostream& operator<<(ostream& s, Worker& w);

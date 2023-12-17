@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/*
+/**
  * Alkalmazott osztály
  * Az alkalmazottnál a ledolgozott napok számát, a betegszabadságokat tartjuk nyilván, illetve
  * a hónapos díját (amit 30 nap ledolgozott nap után kapna), ezekbõl számoljuk a ténylegesen megkapott értéket

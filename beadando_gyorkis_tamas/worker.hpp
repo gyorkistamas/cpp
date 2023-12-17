@@ -35,7 +35,7 @@ public:
     // A frissítés során használatos
     virtual void update() = 0;
 
-    // A '<<' operátor ennek az értékét adja vissza, így egy sorban ki lehet íratni egyes dolgozók adatait
+    // A '<<' operátor ennek az értékét adja vissza, így elég a Worker-nek túl terhelni a << operátorát.
     virtual ostream& printData(ostream& s) = 0;
 
     // Ez pedig a fájlba bekerülõ, ';'-val elválasztott formáját adja vissza az objektumnak

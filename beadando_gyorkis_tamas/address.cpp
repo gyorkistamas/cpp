@@ -13,8 +13,9 @@ ostream& operator<<(ostream& s, Address& a)
     return s;
 }
 
-// Bármely dolgozónak a lakcím módosítása során ez a metódus hívódik meg,
-// ahol menûbõl kiválaszthatja, hogy a cím melyik részét szeretné megváltoztatni
+/** Bármely dolgozónak a lakcím módosítása során ez a metódus hívódik meg,
+ *  ahol menûbõl kiválaszthatja, hogy a cím melyik részét szeretné megváltoztatni
+ */
 void Address::update()
 {
     bool doReading = true;
@@ -63,8 +64,9 @@ void Address::update()
     }
 }
 
-// Cím objektum átalakítása olyan formátumra,
-// ahogy a csv fájlba fog íródni
+/** Cím objektum átalakítása olyan formátumra,
+ *  ahogy a csv fájlba fog íródni
+ */
 string Address::getFileFormat()
 {
     string line = country() + ";" + to_string(postCode()) + ";" + city() + ";" + street() + ";" + to_string(houseNumber());

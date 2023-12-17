@@ -5,7 +5,7 @@
 
 using namespace std;
 
-/*
+/**
  * Szerzõdéses dolgozó osztály
  * Neki a megállapodás alapján a munkaórák, illetve az óradíj alapján számolódik a bére, jutaléka
  */

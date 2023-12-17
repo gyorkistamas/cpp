@@ -1,7 +1,7 @@
 #pragma once
 
-// A járulékok számításánál használt százalékok ide vannak gyûjtve,
-// hogy egyszerû legyen változtatni õket
+// A jÃ¡rulÃ©kok szÃ¡mÃ­tÃ¡sÃ¡nÃ¡l hasznÃ¡lt szÃ¡zalÃ©kok ide vannak gyÃ»jtve,
+// hogy egyszerÅ± legyen vÃ¡ltoztatni Ãµket
 const float employee_contribution = 1;
 const float contractor_contributon = 0.3;
 const float leader_contribution = 1;

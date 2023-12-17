@@ -1,6 +1,5 @@
 #include "employee.hpp"
 #include <iostream>
-#include "date.hpp"
 #include "worker.hpp"
 #include <string>
 #include "constants.hpp"
@@ -31,8 +30,11 @@ int Employee::getWageForMonth()
 
 int Employee::getContribution()
 {
-    // TODO Munkában töltött
-    return round(getWageForMonth() * employee_contribution);
+    // Munkában töltött érték utáni járulékok
+    int dailyWage = round(monthlyWage() / 30);
+    int wage = dailyWage * workDays();
+
+    return round(wage * employee_contribution);
 }
 
 /** Alkalmazott frissítése menü rendszer segítségével

@@ -21,17 +21,16 @@
 	"worker.hpp"
 	<iostream>
 
-1702667718 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
+1702669334 source:d:\projects\cpp\beadando_gyorkis_tamas\employee.cpp
 	"employee.hpp"
 	<iostream>
-	"date.hpp"
 	"worker.hpp"
 	<string>
 	"constants.hpp"
 	<cmath>
 	"checkedReading.hpp"
 
-1702661254 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
+1702669121 source:d:\projects\cpp\beadando_gyorkis_tamas\worker.cpp
 	"worker.hpp"
 	<iostream>
 	<string>
@@ -65,9 +64,9 @@
 	"worker.hpp"
 	<iostream>
 
-1702666910 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
+1702816186 d:\projects\cpp\beadando_gyorkis_tamas\constants.hpp
 
-1702666040 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
+1702668948 source:d:\projects\cpp\beadando_gyorkis_tamas\menu.cpp
 	<string>
 	<cmath>
 	<vector>
